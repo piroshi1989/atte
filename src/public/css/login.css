@@ -1,0 +1,71 @@
+/*content--form*/
+.form__content,
+.date-table {
+    background-color: #F5F5F5;
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.form {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+
+.form__heading,
+.date-table__heading {
+    text-align: center;
+}
+
+.form__group-content input {
+    padding: 10px;
+    width: 500px;
+    border: 1px solid #909090;
+    border-radius: 3px;
+    height: 40px;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+
+.form__group-content {
+    margin: 0 auto;
+}
+
+.form__button-submit {
+    padding: 10px;
+    color: #fff;
+    background-color: #214BE0;
+    width: 500px;
+    border: 1px solid #909090;
+    border-radius: 3px;
+    height: 40px;
+}
+
+/*content--form*/
+
+/*form__bottom*/
+.signup__container,
+.login__container {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 300px;
+}
+
+.signup__text,
+.login__text {
+    color: #909090;
+}
+
+.signup__link {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*form__bottom*/

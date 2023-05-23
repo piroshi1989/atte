@@ -1,0 +1,35 @@
+
+/*date-table*/
+.date-table {
+    background-color: #F5F5F5;
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.date-table {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 100px;
+    padding: 30px 100px;
+}
+
+.date-table__heading {
+    text-align: center;
+}
+
+.date-table__inner{
+    margin: 0 auto;
+    width:100%;
+    
+}
+
+.date-table__row{
+    border-top:solid 1px #a9a9a9;
+}
+
+.date-table__header, .date-table__item{
+    font-size:18px;
+    line-height: 3em;
+}
+/*date-table*/
