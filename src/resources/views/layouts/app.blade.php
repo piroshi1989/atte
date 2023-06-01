@@ -14,7 +14,24 @@
         <div class="header__inner">
             <div class="header-utilities">
             <a class="header__logo" href="/">Atte</a>
-            @yield('header__nav')
+            <nav>
+                <ul class="header-nav">
+                    @if (Auth::check())
+                    <li class="header-nav__item">
+                        <a class="header-nav__link" href="/">ホーム</a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a class="header-nav__link" href="/attendance">日付一覧</a>
+                    </li>
+                    <li class="header-nav__item">
+                    <form method="POST" action="/logout">
+                    @csrf
+                    <button class="header-nav__button" type="submit">ログアウト</button>
+                    </li>
+                    @endif
+                </ul>
+            </nav>
+
             </div>
         </div>
     </header>

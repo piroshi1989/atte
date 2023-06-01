@@ -1,22 +1,6 @@
 @extends('layouts.app')
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/stamp.css') }}">
-@endsection
-
-@section('header__nav')
-<nav>
-    <ul class="header-nav">
-        <li class="header-nav__item">
-            <a class="header-nav__link" href="/">ホーム</a>
-        </li>
-        <li class="header-nav__item">
-            <a class="header-nav__link" href="/">日付一覧</a>
-        </li>
-        <li class="header-nav__item">
-            <a class="header-nav__link" href="/">ログアウト</a>
-        </li>
-    </ul>
-</nav>
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
 @section('content')
