@@ -1,29 +1,13 @@
 @extends('layouts.app')
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/date.css') }}">
-@endsection
-
-@section('header__nav')
-<nav>
-    <ul class="header-nav">
-        <li class="header-nav__item">
-            <a class="header-nav__link" href="/">ホーム</a>
-        </li>
-        <li class="header-nav__item">
-            <a class="header-nav__link" href="/">日付一覧</a>
-        </li>
-        <li class="header-nav__item">
-            <a class="header-nav__link" href="/">ログアウト</a>
-        </li>
-    </ul>
-</nav>
+<link rel="stylesheet" href="{{ asset('css/attendance.css') }}">
 @endsection
 
 @section('content')
 <div class="date-table">
     <div class="date-table__heading">
         <h2>2021-11-01</h2>
-        {{-- あとで修正　ここは、datetimeのformat修正して$date[]とかにする？ --}}
+        {{-- あとで修正 ここは、datetimeのformat修正して$date[]とかにする？ --}}
         {{-- ページネート？？ --}}
     </div>
     <table class="date-table__inner">

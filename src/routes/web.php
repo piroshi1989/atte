@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\WorkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,10 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/',[LoginController::class,('login')]);
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', [LoginController::class, 'login']);
+    Route::get('/attendance', [WorkController::class, 'attendance']);
+});

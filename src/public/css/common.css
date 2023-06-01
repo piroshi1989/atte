@@ -32,6 +32,13 @@
     color: #000;
 }
 
+.header-nav__button{
+    text-decoration: none;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+}
+
 /*header__nav*/
 
 /*footer*/
