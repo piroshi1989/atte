@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\WorkController;
+use App\Http\Controllers\TimestampsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +20,14 @@ use App\Http\Controllers\WorkController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [LoginController::class, 'login']);
-    Route::get('/attendance', [WorkController::class, 'attendance']);
-});
+
+    Route::get('/start_worktime', [LoginController::class, 'login']);
+    Route::post('/start_worktime', [TimestampsController::class, 'startWork']);
+    Route::get('/end_worktime', [LoginController::class, 'login']);
+    Route::post('/end_worktime', [TimestampsController::class, 'endWork']);
+    
+    Route::get('/start_breaktime', [LoginController::class, 'login']);
+    Route::post('/start_breaktime', [TimestampsController::class, 'startBreak']);
+    Route::get('/end_breaktime', [LoginController::class, 'login']);
+    Route::post('/end_breaktime', [TimestampsController::class, 'endBreak']);
+    });

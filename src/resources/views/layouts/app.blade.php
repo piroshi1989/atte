@@ -24,17 +24,18 @@
                         <a class="header-nav__link" href="/attendance">日付一覧</a>
                     </li>
                     <li class="header-nav__item">
-                    <form method="POST" action="/logout">
+                    <form  class="form" action="{{ route('logout') }}" method="post">
                     @csrf
                     <button class="header-nav__button" type="submit">ログアウト</button>
+                    </form>
                     </li>
                     @endif
                 </ul>
             </nav>
-
             </div>
         </div>
     </header>
+
     @yield('content')
 </body>
 <footer class="footer">
