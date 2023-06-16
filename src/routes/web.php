@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TimestampsController;
+use App\Http\Controllers\AttendanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/start_breaktime', [TimestampsController::class, 'startBreak']);
     Route::get('/end_breaktime', [LoginController::class, 'login']);
     Route::post('/end_breaktime', [TimestampsController::class, 'endBreak']);
+
+    Route::get('/attendance', [AttendanceController::class, 'attendanceView']);
+
     });

@@ -13,7 +13,7 @@ class TimestampsController extends Controller
     public function startWork(){
         $user = Auth::user();
 
-        //user_idの中で一番新しいレコードを取得してくる
+        //最新レコードを取得してくる
         $oldAttendance = Attendance::where('user_id', $user->id)->latest()->first();
 
 
@@ -34,7 +34,7 @@ class TimestampsController extends Controller
         
         //出勤打刻は1日1回、退勤打刻がされていないときのみ有効
         if($oldAttendanceDay == $newAttendanceDay){
-            return redirect('/start_worktime')->with('error', 'すでに勤務開始打刻がされています');
+            return redirect('/start_worktime')->with('error', '勤務開始打刻はすでにされています');
         }else{
             $attendance = Attendance::create([
             'user_id' => $user->id,
@@ -127,7 +127,7 @@ class TimestampsController extends Controller
 
         //休憩終了打刻は1回だけ
         if(!empty($oldBreakTime->end_time)){
-        return redirect('/end_breaktime')->with('error', '休憩終了打刻はすでにされています');
+        return redirect('/end_breaktime')->with('error', '休憩終了打刻はすでにされています。休憩をする場合は休憩開始打刻をしてください');
         }
 
        //日付をまたぐ場合：old end_time, new start_time, new end_timeを入力
