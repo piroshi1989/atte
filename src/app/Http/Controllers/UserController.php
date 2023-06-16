@@ -7,21 +7,21 @@ use App\Models\Attendance;
 use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 
-class AttendanceController extends Controller
+class UserController extends Controller
 {
-    public function attendanceView(){
+    public function userView(){
 
-        $attendanceRecords = Attendance::with('breakTimes')->latest()->get();
+        $attendanceRecords = Attendance::with('breakTimes','user')->latest()->get();
         //昇順に並べ替えて取得
 
-        $groupedRecords = $attendanceRecords->groupBy(function ($record) {
-        $carbonDate = Carbon::parse($record->start_time);
-            return $carbonDate->format('Y-m-d');
+        $groupedRecords = $attendanceRecords->groupBy(function($record){
+            return $record->user->name;
         });
+
         
-        $formattedRecords = $groupedRecords->map(function ($records, $date) {
+        $formattedRecords = $groupedRecords->map(function ($records,$name ) {
             return [
-                'date' => $date,
+                'name' => $name,
                 'records' => $records->map(function ($record) {
                     $start = Carbon::parse($record->start_time);
                     $end = Carbon::parse($record->end_time);
@@ -48,9 +48,11 @@ class AttendanceController extends Controller
                     $seconds = $totalAttendanceTime % 60;
                     //差分は数値になっているため00:00:00の形に整える
                     $formattedTotalAttendanceTime = sprintf ('%02d:%02d:%02d', $hours, $minutes, $seconds);
+
+                    $date = Carbon::parse($record->start_time);
             
                     return [
-                        'date' => $date,
+                        'date' => $date->format('Y-m-d'),
                         'start_time' => Carbon::parse($record->start_time)->format('h:i:s'),
                         'end_time' => Carbon::parse($record->end_time)->format('h:i:s'),
                         'total_break_time' => $formattedTotalBreakTime,
@@ -59,11 +61,8 @@ class AttendanceController extends Controller
             ];
         })->paginate($perPage = 5, $pageName = 'records'),
     ];
-})->simplePaginate(
-    $perPage = 1, $pageName = 'dates');
+});
 
-
-    
-    return view('attendance', compact('formattedRecords'));
+    return view('user', compact('formattedRecords'));
 }
 }
