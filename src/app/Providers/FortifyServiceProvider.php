@@ -32,6 +32,10 @@ class FortifyServiceProvider extends ServiceProvider
             return view('register');
         });
 
+        Fortify::verifyEmailView(function () {
+        return view('verify-email');
+        });
+
         Fortify::loginView(function () {
             return view('login');
         });

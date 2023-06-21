@@ -50,7 +50,7 @@ class AttendanceController extends Controller
                     $formattedTotalAttendanceTime = sprintf ('%02d:%02d:%02d', $hours, $minutes, $seconds);
             
                     return [
-                        'date' => $date,
+                        'name' => $record->user->name,
                         'start_time' => Carbon::parse($record->start_time)->format('h:i:s'),
                         'end_time' => Carbon::parse($record->end_time)->format('h:i:s'),
                         'total_break_time' => $formattedTotalBreakTime,
