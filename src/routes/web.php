@@ -20,7 +20,7 @@ use App\Http\Controllers\UserController;
 
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('verified')->group(function () {
     Route::get('/', [LoginController::class, 'login']);
 
     Route::get('/start_worktime', [LoginController::class, 'login']);
