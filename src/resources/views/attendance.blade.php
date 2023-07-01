@@ -7,10 +7,10 @@
 @endsection
 
 @section('content')
-@if(!empty($data))
 <div class="date-table">
     <div class="date-table__heading">
         @foreach ($formattedRecords as $data)
+        @if ($data)
         <h2>{{ $data['date'] }}</h2>
 {{ $formattedRecords->links('vendor.pagination.simple-tailwind') }}
     </div>
@@ -30,10 +30,11 @@
             <td class="date-table__item">{{ $record['total_break_time'] }}</td>
             <td class="date-table__item">{{ $record['total_attendance_time'] }}</td>
             @endforeach
-        @endforeach
+
         </tr>
     </table>
         {{ $data['records']->links('vendor.pagination.tailwind') }}
 </div>
 @endif
+@endforeach
 @endsection

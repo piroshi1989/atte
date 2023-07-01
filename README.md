@@ -3,7 +3,7 @@
 勤務開始、勤務終了を記録することで勤務時間を算出できる
 休憩時間があれば差し引いて勤務時間を算出できる
 
-<トップ画像>
+![top](https://github.com/piroshi1989/atte/assets/123999429/18546ff6-9969-450c-b98d-9189064339c9)
 
 ##作成した目的
 COACHTECH Web開発初級案件
@@ -25,9 +25,10 @@ mysql 8.0.33
 nginx 1.12.2
 
 ##テーブル設計
-<画像>
+![image](https://github.com/piroshi1989/atte/assets/123999429/8aa3dd4a-0308-4086-97c2-4598a3001bf0)
 
 ##ER図
+![image](https://github.com/piroshi1989/atte/assets/123999429/beff8cff-635f-4e8f-8bc0-c9a1c8300384)
 
 ##環境構築
 dockerでの環境構築
