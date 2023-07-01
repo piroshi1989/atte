@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TimestampsController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\S3Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,8 @@ use App\Http\Controllers\UserController;
 
 
 
-Route::middleware('verified')->group(function () {
+//Route::middleware('verified')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/', [LoginController::class, 'login']);
 
     Route::get('/start_worktime', [LoginController::class, 'login']);
@@ -35,4 +37,8 @@ Route::middleware('verified')->group(function () {
 
     Route::get('/attendance', [AttendanceController::class, 'attendanceView']);
     Route::get('/user', [UserController::class, 'userView']);
+    //S3確認用
+    Route::get('/upload', [S3Controller::class, 'uploadView']);
+    Route::post('/upload', [S3Controller::class, 'uploadS3']);
     });
+
