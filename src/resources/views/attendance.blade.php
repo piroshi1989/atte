@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+@if (!empty($formattedRecords))
 <div class="date-table">
     <div class="date-table__heading">
         @foreach ($formattedRecords as $data)
@@ -34,4 +35,5 @@
     </table>
         {{ $data['records']->links('vendor.pagination.tailwind') }}
 </div>
+@endif
 @endsection
