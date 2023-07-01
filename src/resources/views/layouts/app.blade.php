@@ -20,11 +20,9 @@
                     <li class="header-nav__item">
                         <a class="header-nav__link" href="/">ホーム</a>
                     </li>
-                    @if (!empty($formattedRecords))
                     <li class="header-nav__item">
                         <a class="header-nav__link" href="/attendance">日付一覧</a>
                     </li>
-                    @endif
                     <li class="header-nav__item">
                         <a class="header-nav__link" href="/user">ユーザーページ</a>
                     </li>
