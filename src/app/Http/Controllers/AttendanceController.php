@@ -51,7 +51,7 @@ class AttendanceController extends Controller
             
                     return [
                         'name' => $record->user->name,
-                        'start_time' => Carbon::parse($record->start_time)->format('h:i:s'),
+                        'start_time' => Carbon::parse($record->start_time)->format('H:i:s'),
                         'end_time' => $record->end_time ? Carbon::parse($record->end_time)->format('H:i:s') : '00:00:00',
                         //end_timeが入力されていないときは00:00:00を表示
                         'total_break_time' => $formattedTotalBreakTime,
